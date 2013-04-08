@@ -27,7 +27,7 @@ RC PF_Manager::CreateFile(const char *fileName)
 {
   /** Open a file as write to erase one that was there before and just close it to save changes. */
   fstream file;
-  file.open(fileName);
+  file.open(fileName, ios::out);
   file.close();
   return 0;
 }
