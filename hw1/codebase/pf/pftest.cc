@@ -149,7 +149,7 @@ int PFTest_3(PF_Manager *pf)
   
   /** Use this buffer to write in/read out pages. */
   char buf[PF_PAGE_SIZE];
-  char * msg = "this is a test sentence to put in the page";
+  const char * msg = "this is a test sentence to put in the page";
   memcpy(buf, msg, strlen(msg)+1);
 
   /** Try appending a page and make sure it was updated properly. */
@@ -193,6 +193,7 @@ int PFTest_3(PF_Manager *pf)
   assert(!FileExists("test"));
   
   cout << "Test Case 3 passsed!" << std::endl;
+  return 0;
 }
 
 int main()
