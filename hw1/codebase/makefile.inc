@@ -1,5 +1,5 @@
 ## For students: change this path to the root of your code
-CODEROOT = "/home/kebenson/repos/cs222/hw1"
+CODEROOT = "/home/kebenson/repos/cs222/hw1/codebase"
 
 #CC = gcc
 CC = g++

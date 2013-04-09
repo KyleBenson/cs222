@@ -79,7 +79,7 @@ RC PF_FileHandle::WritePage(PageNum pageNum, const void *data)
 
 RC PF_FileHandle::AppendPage(const void *data)
 {
-  return WritePage (PF_PAGE_SIZE * npages++, data);
+  return WritePage (npages++, data);
 }
 
 
@@ -93,7 +93,7 @@ RC PF_FileHandle::OpenFile(const char * filename)
 {
   //we want the file open for both input and output, binary mode
   //set it to seek to end after opening so we know how many pages are in file
-  _file.open (filename, ios_base::in | ios_base::out | ios_base::ate);
+  _file.open (filename, ios_base::in | ios_base::out | ios_base::ate | ios::binary);
   npages = _file.tellg() / PF_PAGE_SIZE;
   return 0;
 }
